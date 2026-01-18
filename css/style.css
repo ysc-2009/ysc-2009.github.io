@@ -226,6 +226,83 @@ header #logo img {
 	padding: 0px;
 	margin-left: 35%;	/*左の画像とバランスをとって設定する*/
 }
+/*体験入会のボタン
+---------------------------------------------------------------------------*/
+
+.center {
+  text-align: center;
+}
+
+.trial-button {
+  display: inline-block;
+  background-color: #ff9800;   /* 目立つオレンジ */
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 20px 0;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* ホバー時（PC） */
+.trial-button:hover {
+  background-color: #fb8c00;
+  transform: translateY(-2px);
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 768px) {
+  .trial-button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    font-size: 18px;
+    padding: 18px 0;
+  }
+}
+/*---------------------------------------------------------------------------*/
+
+/*会費ページ用---------------------------------------------------------------------------*/
+.fee-structure {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.fee-title {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.fee-boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fee-box {
+  background: #f2f6fb;
+  border: 2px solid #76b1f4;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: bold;
+  min-width: 140px;
+}
+
+.fee-box span {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.fee-plus {
+  font-size: 20px;
+  font-weight: bold;
+}
+/*---------------------------------------------------------------------------*/
 
 /*subコンテンツ
 ---------------------------------------------------------------------------*/
@@ -281,26 +358,81 @@ header #logo img {
 
 /*フッター設定
 ---------------------------------------------------------------------------*/
-footer {
-	clear: both;
-	text-align: center;		/*内容をセンタリング*/
-	padding: 10px 0;		/*上下、左右へのボックス内の余白*/
-	background: #76b1f4;	/*背景色*/
-	color: #fff;			/*文字色*/
-	border-radius: 10px;	/*角丸のサイズ*/
-	margin-bottom: 20px;	/*フッターの下(外側)に空けるスペース*/
+/* ===== フッター全体 ===== */
+.site-footer {
+  clear: both;
+  background: #76b1f4;     /* ← 元の背景色を維持 */
+  color: #fff;
+  padding: 20px 15px;
+  font-size: 14px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
-footer a {
-	text-decoration: none;
-	color: #fff;	/*リンクテキストの色*/
+
+/* 内側レイアウト */
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
 }
-footer a:hover {
-	color: #fff;	/*マウスオン時のリンクテキストの色*/
+
+/* クラブ名・説明 */
+.footer-club {
+  margin-bottom: 15px;
 }
-footer .pr {
-	display: block;
-	font-size: 80%;
+
+.club-name {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
+
+/* ナビゲーション */
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+/* PC：横並び */
+.footer-nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+/* リンク（青地なので白＋下線） */
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  opacity: 0.8;
+}
+
+/* 補足情報 */
+.footer-info {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.copyright {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+/* ===== スマホ対応 ===== */
+@media screen and (max-width: 768px) {
+
+  .footer-nav li {
+    display: block;        /* ← 縦並び */
+    margin: 8px 0;
+  }
+
+  .site-footer {
+    padding: 25px 15px;
+  }
+}
+
 
 /*トップページ内「更新情報・お知らせ」ブロック
 ---------------------------------------------------------------------------*/
