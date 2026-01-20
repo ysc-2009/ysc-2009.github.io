@@ -106,7 +106,7 @@ a:hover {
 /*ヘッダーブロック*/
 header {
   text-align: center; /*内容をセンタリング*/
-  padding: 40px 3%; /*上下、左右へのブロック内の余白*/
+  padding: 20px 3%; /*上下、左右へのブロック内の余白*/
 }
 /*ロゴ画像*/
 header #logo img {
@@ -280,6 +280,7 @@ header #logo img {
   padding: 0px;
   margin-left: 35%; /*左の画像とバランスをとって設定する*/
 }
+
 /*体験入会のボタン
 ---------------------------------------------------------------------------*/
 
@@ -319,37 +320,319 @@ header #logo img {
     padding: 18px 0;
   }
 }
-/*---------------------------------------------------------------------------*/
-#main .contact-section {
-  margin: 50px 0;
-  text-align: center;
+/*問い合わせ---------------------------------------------------------------------------*/
+
+/* ===== カード全体（3行まとめて1枚） ===== */
+#main .contact-card {
+  max-width: 520px;
+  margin: 24px auto 0;
+  padding: 20px 24px;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
-/* 各行 */
+/* ===== 各行 ===== */
 #main .contact-line {
-  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 12px 0;
+  margin: 0;
+
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
-/* ラベル */
+/* 行の区切り線（最後以外） */
+#main .contact-line:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ===== ラベル（：位置を揃える） ===== */
 #main .contact-line .label {
   display: inline-block;
-  min-width: 5em; /* ← コロン位置を揃える */
-  text-align: right;
+  min-width: 5em;       /* ← ここが揃えの肝 */
+  text-align: right;   /* ← 「：」が縦に揃う */
   font-weight: 600;
   color: #555;
 }
 
-/* 値 */
+/* ===== 値 ===== */
 #main .contact-line .value {
-  margin-left: 8px;
+  color: #111;
 }
 
-/* メールリンク */
+/* ===== メールリンク（アニメーションなし） ===== */
 #main .contact-line a {
-  color: #1f4fd8;
+  color: #1a73e8;
   text-decoration: underline;
+  font-weight: 500;
+}
+
+/* ===== スマホ対応 ===== */
+@media screen and (max-width: 480px) {
+  #main .contact-card {
+    padding: 16px;
+  }
+
+  #main .contact-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  #main .contact-line .label {
+    min-width: auto;
+    text-align: left;
+    font-size: 14px;
+    color: #666;
+  }
+
+  #main .contact-line .value {
+    font-size: 16px;
+  }
+}
+
+
+/*表彰状
+---------------------------------------------------------------------------*/
+.certificate-img {
+  display: block;
+  max-width: 420px;
+  width: 100%;
+  margin: 15px auto 35px; /* ← auto が中央寄せ */
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*会員向けページ---------------------------------------------------------------------------*/
+/* ===============================
+   member-section / details 共通
+================================ */
+.member-section details {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  background: #f9fbff;
+}
+
+/* summary 全体 */
+.member-section summary {
+  padding: 18px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  font-size: 18px;
+  background: #f4f7fb;
+  border: 1px solid #d6dee9;
+  border-radius: 6px;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* hover */
+.member-section summary:hover {
+  background: #eef3f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* アイコン */
+.member-section summary::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #4a6fa5;
+  border-bottom: 2px solid #4a6fa5;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.25s ease;
+}
+
+/* 開いた状態 */
+.member-section details[open] summary {
+  background: #e9f0fa;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* 開いたとき矢印を回転 */
+.member-section details[open] summary::after {
+  transform: translateY(-50%) rotate(225deg);
+}
+
+/* 中身 */
+.member-section details > *:not(summary) {
+  padding: 20px;
+  border: 1px solid #d6dee9;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  background: #fff;
+}
+
+
+.details-block summary {
+  padding: 14px 18px;
+  font-weight: bold;
+  background: #f2f6fa;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.details-content {
+  margin-top: 12px;
+  padding: 20px;
+  background: #fff;
+  border: 2px solid #e0e6ee;
+  border-radius: 8px;
+}
+
+
+/* ===============================
+   新年度更新手続き 見た目改善
+================================ */
+
+:root {
+  --main: #4a6fa5;
+  --sub: #9aaecb;
+  --bg: #f4f7fb;
+  --border: #d6dee9;
+  --text: #222;
+}
+
+/* 全体 */
+.renewal-content {
+  padding: 24px 20px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* リード */
+.renewal-lead {
+  background: var(--bg);
+  border-left: 4px solid var(--main);
+  padding: 16px;
+  margin-bottom: 32px;
+}
+
+/* セクション */
+.renewal-section {
+  margin-bottom: 40px;
+}
+
+.renewal-section h3 {
+  font-size: 18px;
+  border-bottom: 2px solid var(--main);
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+}
+
+/* カード */
+.renewal-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 24px;
+  background: #fff;
+}
+
+.renewal-card h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* リスト */
+.renewal-list {
+  padding-left: 18px;
+}
+
+.renewal-list li {
+  margin-bottom: 16px;
+}
+
+.item-title {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.item-desc {
+  margin-left: 4px;
+}
+
+.item-desc ul {
+  margin-top: 8px;
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+/* 注意 */
+.renewal-note {
+  background: #fafafa;
+  border-left: 4px solid var(--sub);
+  padding: 12px 16px;
+  margin-top: 20px;
+}
+
+/* テーブル */
+.insurance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.insurance-table th,
+.insurance-table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.insurance-table th {
+  background: var(--bg);
+}
+
+/* ===============================
+   保険テーブル
+================================ */
+.insurance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  background: #fff;
+}
+
+.insurance-table th {
+  background: #76b1f4;
+  color: #020000;
+  padding: 10px;
+  text-align: left;
+}
+
+.insurance-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* ===============================
+   活動報告（コメント＋画像）
+================================ */
+.report-item p {
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.report-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 6px;
 }
 
 /*会費ページ用---------------------------------------------------------------------------*/
