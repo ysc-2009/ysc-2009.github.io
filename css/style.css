@@ -20,7 +20,7 @@ body {
   line-height: 2; /*行間*/
   -webkit-text-size-adjust: none;
   background: #fff url(../images/bg.jpg); /*背景色、背景画像の読み込み*/
-  border-top: 5px solid #76b1f4; /*上の線の幅、線種、色*/
+  border-top: 5px solid #5fa8e8; /*上の線の幅、線種、色*/
 }
 h1,
 h2,
@@ -89,7 +89,7 @@ a {
   transition: 0.5s; /*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
 }
 a:hover {
-  color: #76b1f4; /*マウスオン時の文字色*/
+  color: #5fa8e8; /*マウスオン時の文字色*/
   text-decoration: none; /*マウスオン時に下線を消す設定。残したいならこの１行削除。*/
 }
 
@@ -146,7 +146,7 @@ header #logo img {
 #menubar li a span {
   display: block;
   font-size: 9px; /*文字サイズ*/
-  background: #76b1f4; /*背景色*/
+  background: #5fa8e8; /*背景色*/
   color: #fff; /*文字色*/
   border-radius: 0px 0px 8px 8px; /*角丸のサイズ。左上、右上、右下、左下への設定*/
   margin: 0 30px; /*上、左右への飾り文字の外側に空けるスペース*/
@@ -155,7 +155,7 @@ header #logo img {
 /*マウスオン時と、現在表示中メニューの設定*/
 #menubar li a:hover,
 #menubar li.current a {
-  background: #76b1f4; /*背景色*/
+  background: #5fa8e8; /*背景色*/
   position: relative;
   top: 1px; /*現在の場所から下に1pxずらす*/
   left: 1px; /*現在の場所から右に1pxずらす*/
@@ -165,7 +165,7 @@ header #logo img {
 #menubar li a:hover span,
 #menubar li.current a span {
   background: #fff; /*背景色*/
-  color: #76b1f4; /*文字色*/
+  color: #5fa8e8; /*文字色*/
 }
 /*スマホ用メニューを表示させない*/
 #menubar-s {
@@ -225,7 +225,7 @@ header #logo img {
 }
 /*mainコンテンツのh3タグの１文字目への設定*/
 #main h3::first-letter {
-  border-left: 3px solid #76b1f4; /*左の線の幅、線種、色*/
+  border-left: 3px solid #5fa8e8; /*左の線の幅、線種、色*/
   padding-left: 10px; /*線と文字との間の余白*/
 }
 /*段落タグ設定*/
@@ -270,10 +270,10 @@ header #logo img {
 /*ボックス内のh4タグ設定*/
 #main .list h4 {
   font-size: 20px; /*文字サイズ*/
-  border-bottom: 4px dotted #76b1f4; /*下側の線の幅、線種、色*/
+  border-bottom: 4px dotted #5fa8e8; /*下側の線の幅、線種、色*/
   margin-bottom: 10px;
   margin-left: 35%; /*左の画像とバランスをとって設定する*/
-  color: #76b1f4; /*文字色*/
+  color: #5fa8e8; /*文字色*/
 }
 /*ボックス内の段落タグ設定*/
 #main .list p {
@@ -355,8 +355,8 @@ header #logo img {
 /* ===== ラベル（：位置を揃える） ===== */
 #main .contact-line .label {
   display: inline-block;
-  min-width: 5em;       /* ← ここが揃えの肝 */
-  text-align: right;   /* ← 「：」が縦に揃う */
+  min-width: 5em; /* ← ここが揃えの肝 */
+  text-align: right; /* ← 「：」が縦に揃う */
   font-weight: 600;
   color: #555;
 }
@@ -374,7 +374,7 @@ header #logo img {
 }
 
 /* ===== スマホ対応 ===== */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   #main .contact-card {
     padding: 16px;
   }
@@ -396,7 +396,6 @@ header #logo img {
     font-size: 16px;
   }
 }
-
 
 /*表彰状
 ---------------------------------------------------------------------------*/
@@ -427,17 +426,19 @@ header #logo img {
   cursor: pointer;
   list-style: none;
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
   background: #f4f7fb;
   border: 1px solid #d6dee9;
   border-radius: 6px;
-  transition: background 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 /* hover */
 .member-section summary:hover {
   background: #eef3f9;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 /* アイコン */
@@ -448,8 +449,8 @@ header #logo img {
   top: 50%;
   width: 10px;
   height: 10px;
-  border-right: 2px solid #4a6fa5;
-  border-bottom: 2px solid #4a6fa5;
+  border-right: 2px solid #5fa8e8;
+  border-bottom: 2px solid #5fa8e8;
   transform: translateY(-50%) rotate(45deg);
   transition: transform 0.25s ease;
 }
@@ -475,7 +476,6 @@ header #logo img {
   background: #fff;
 }
 
-
 .details-block summary {
   padding: 14px 18px;
   font-weight: bold;
@@ -492,13 +492,30 @@ header #logo img {
   border-radius: 8px;
 }
 
+/* スマホ用（768px以下） */
+@media screen and (max-width: 768px) {
+  .member-section summary {
+    padding: 18px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    font-size: 12px;
+    background: #f4f7fb;
+    border: 1px solid #d6dee9;
+    border-radius: 6px;
+    transition:
+      background 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+}
 
 /* ===============================
    新年度更新手続き 見た目改善
 ================================ */
 
 :root {
-  --main: #4a6fa5;
+  --main: #5fa8e8;
   --sub: #9aaecb;
   --bg: #f4f7fb;
   --border: #d6dee9;
@@ -507,18 +524,11 @@ header #logo img {
 
 /* 全体 */
 .renewal-content {
-  padding: 24px 20px;
+  padding: 24px 21px;
   color: var(--text);
   line-height: 1.8;
 }
 
-/* リード */
-.renewal-lead {
-  background: var(--bg);
-  border-left: 4px solid var(--main);
-  padding: 16px;
-  margin-bottom: 32px;
-}
 
 /* セクション */
 .renewal-section {
@@ -571,14 +581,6 @@ header #logo img {
   font-size: 14px;
 }
 
-/* 注意 */
-.renewal-note {
-  background: #fafafa;
-  border-left: 4px solid var(--sub);
-  padding: 12px 16px;
-  margin-top: 20px;
-}
-
 /* テーブル */
 .insurance-table {
   width: 100%;
@@ -608,7 +610,7 @@ header #logo img {
 }
 
 .insurance-table th {
-  background: #76b1f4;
+  background: #5fa8e8;
   color: #020000;
   padding: 10px;
   text-align: left;
@@ -656,7 +658,7 @@ header #logo img {
 
 .fee-box {
   background: #f2f6fb;
-  border: 2px solid #76b1f4;
+  border: 2px solid #5fa8e8;
   border-radius: 8px;
   padding: 12px 16px;
   font-weight: bold;
@@ -673,6 +675,21 @@ header #logo img {
   font-weight: bold;
 }
 
+@media screen and (max-width: 780px) {
+
+  .fee-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fee-plus {
+    margin: 4px 0;
+  }
+
+}
+
+
 /*subコンテンツ
 ---------------------------------------------------------------------------*/
 /*subブロック*/
@@ -684,7 +701,7 @@ header #logo img {
 /*subコンテンツ内のh2タグ設定*/
 #sub h2 {
   padding: 10px 15px; /*上下、左右への余白*/
-  background: #76b1f4; /*背景色*/
+  background: #5fa8e8; /*背景色*/
   color: #fff; /*文字色*/
   text-align: center; /*内容をセンタリング*/
   border-bottom: 4px solid #faa003; /*下線の幅、線種、色*/
@@ -724,6 +741,19 @@ header #logo img {
 /*box内のメニューブロックの設定*/
 #sub .box ul.submenu {
   margin-bottom: 0;
+}
+
+/* 地図共通 */
+#sub .box iframe {
+  max-width: 100%;
+}
+
+/* スマホ用（768px以下） */
+@media screen and (max-width: 768px) {
+  #sub .box iframe {
+    width: 100%;
+    height: 200px; /* ← 好みで200〜300pxに調整 */
+  }
 }
 
 /*
@@ -767,7 +797,7 @@ header #logo img {
 /* ===== フッター全体 ===== */
 .site-footer {
   clear: both;
-  background: linear-gradient(180deg, #6fa8dc, #4f86c6);
+  background: linear-gradient(180deg, #6fa8dc, #5fa8e8);
   color: #f5faff;
   padding: 35px 20px 25px;
   font-size: 14px;
@@ -918,7 +948,7 @@ header #logo img {
 /*質問*/
 .faq dt {
   font-weight: bold; /*太字にする設定*/
-  color: #76b1f4; /*文字色*/
+  color: #5fa8e8; /*文字色*/
 }
 /*回答*/
 .faq dd {
@@ -1118,7 +1148,7 @@ img.fl {
 
 /*画面幅800px以下の設定
 ------------------------------------------------------------------------------------------------------------------------------------------------------*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   /*メインメニュー
 ---------------------------------------------------------------------------*/
   /*アニメーションのフレーム設定。全100コマアニメーションだと思って下さい。透明度(opacity)0%から透明度100%にする指定。*/
@@ -1188,11 +1218,11 @@ img.fl {
   }
   /*三本バーアイコン*/
   #menubar_hdr.close {
-    background: #76b1f4 url(../images/icon_menu.png) no-repeat center top/50px; /*背景色、アイコン画像読み込み、画像の上半分を読み込む。幅50px。*/
+    background: #5fa8e8 url(../images/icon_menu.png) no-repeat center top/50px; /*背景色、アイコン画像読み込み、画像の上半分を読み込む。幅50px。*/
   }
   /*閉じるアイコン*/
   #menubar_hdr.open {
-    background: #76b1f4 url(../images/icon_menu.png) no-repeat center
+    background: #5fa8e8 url(../images/icon_menu.png) no-repeat center
       bottom/50px; /*背景色、アイコン画像読み込み、画像の下半分を読み込む。幅50px。*/
   }
 
@@ -1252,7 +1282,7 @@ img.fl {
   /*ボックス内のh4タグ設定*/
   #main .list h4 {
     font-size: 14px; /*文字サイズ*/
-    border-bottom: 2px dotted #76b1f4; /*下側の線の幅、線種、色*/
+    border-bottom: 2px dotted #5fa8e8; /*下側の線の幅、線種、色*/
   }
 
   /*トップページ内「更新情報・お知らせ」ブロック
